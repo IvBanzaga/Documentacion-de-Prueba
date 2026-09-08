@@ -1,0 +1,55 @@
+# ==========================================
+# ⚙️ CONFIGURACIÓN GENERAL
+# ==========================================
+# Ignore Git folder (no tiene sentido en .gitignore, pero por si se copia)
+.git/
+
+# Ignore macOS system files
+.DS_Store
+
+# IDEs y editores
+.vscode/
+.idea/
+*.code-workspace
+
+# ==========================================
+# 📦 DEPENDENCIAS Y ENTORNOS
+# ==========================================
+node_modules/
+package-lock.json
+yarn.lock
+
+# ==========================================
+# 🧩 ARCHIVOS DE ENTORNO (.env)
+# ==========================================
+.env
+.env.local
+.env.*.local
+.env.test.local
+.env.production.local
+.env.development.local
+.env.staging.local
+
+# ==========================================
+# 📁 BUILD Y TEMPORALES (Angular)
+# ==========================================
+/dist/
+/out-tsc/
+/tmp/
+/coverage/
+/e2e/test-output/
+/.angular/
+/.ng/
+
+# ==========================================
+# 🧰 CACHE Y COMPILACIÓN
+# ==========================================
+*.tsbuildinfo
+
+# ==========================================
+# 🪵 LOGS
+# ==========================================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

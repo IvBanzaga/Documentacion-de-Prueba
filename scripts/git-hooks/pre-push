@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Block push if tracked files contain likely real secrets.
+PATTERN="sb_secret_[A-Za-z0-9_-]{20,}|SUPABASE_SERVICE_KEY\\s*=\\s*sb_secret_[A-Za-z0-9_-]{20,}|AKIA[0-9A-Z]{16}|-----BEGIN (RSA|EC|OPENSSH) PRIVATE KEY-----"
+
+if git grep -n -E "$PATTERN" -- . >/dev/null 2>&1; then
+  echo "[pre-push] Push bloqueado: se detectaron posibles secretos en archivos tracked."
+  echo "[pre-push] Revisa con: git grep -n -E '$PATTERN' -- ."
+  exit 1
+fi
+
+exit 0
